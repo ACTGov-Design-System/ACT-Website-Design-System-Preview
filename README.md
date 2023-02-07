@@ -11,3 +11,13 @@
 ## 🌏 Overview
 
 This repo contains the static preview files for the [ACT Government Website Design System](https://github.com/ACTGov-Design-System/ACT-Website-Design-System).
+
+
+## 👩‍💻 Development
+
+To have hot reloading during develop, you can use the `reload` package.
+
+```sh
+npm install reload -g
+reload -b -p 9000
+```
