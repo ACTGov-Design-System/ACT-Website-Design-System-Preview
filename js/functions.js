@@ -100,3 +100,22 @@ function openChildLinks(e) {
   }
   childElement.style.display = "block";
 }
+
+//P-12 Cookie Consent
+function toggleCookieConsent() {
+  const e = document.querySelector(".act-popup.bottom");
+  if (e) {
+    if (e.style.visibility === "hidden") {
+      e.style.visibility = "visible";
+    } else {
+      //find all the visible child links and hide them before closing the menu
+      const visibleChildElements = document.querySelectorAll("[id^=child-links-]");
+      for (const childElement of visibleChildElements) {
+        childElement.style.display = "none";
+      }
+
+      //now close the menu
+      e.style.visibility = "hidden";
+    }
+  }
+}
