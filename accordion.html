@@ -1,11 +1,11 @@
 <html lang="en">
   <head>
     <title>ACT Government | Website Design System | PREVIEW</title>
-    <link rel="shortcut icon" href="/favicons/act-favicon.png" />
-    <link rel="icon" type="image/png" href="/favicons/act-favicon.png" sizes="192x192" />
-    <link href="/css/style.compiled.css" rel="stylesheet" />
-    <script src="js/functions.js" />
+    <link rel="shortcut icon" href="favicons/act-favicon.png" />
+    <link rel="icon" type="image/png" href="favicons/act-favicon.png" sizes="192x192" />
+    <link href="css/style.compiled.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/01a48c4df0.js" crossorigin="anonymous"></script>
+    <script src="js/functions.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -69,9 +69,14 @@
                               >Preview <i class="fa-solid fa-angle-right"></i>
                             </a>
                           </li>
+                          <li class="act-breadcrumbs__crumb act-h6">
+                            <a href="/" class="act-breadcrumbs__crumb__link"
+                              >A11 - Accordion <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                          </li>
                         </ul>
                       </div>
-                      <h1>Accordion</h1>
+                      <h1>A11 - Accordion</h1>
                     </div>
                   </div>
                 </div>
@@ -84,9 +89,11 @@
                 <div class="act-flex__row">
                   <div class="act-col__cw-12">
                     <div class="act-box">
+                      <p>Click the title to toggle open/closed</p>
+                      <br />
                       <div class="act-accordion act-accordion__primary">
                         <div class="act-accordion__container">
-                          <div class="act-accordion__section act-accordion__section__open">
+                          <div class="act-accordion__section act-accordion__section__closed">
                             <div class="act-accordion__section__heading" onclick="toggleAccordion()">
                               <h5>Title</h5>
                               <i class="fa-solid fa-xmark"></i>
@@ -115,7 +122,7 @@
                       <div class="act-footer-aoc">
                         <div class="act-footer-aoc__title">
                           <div class="act-footer-aoc__icon">
-                            <img src="/images/footer-aoc-icon.svg" alt="symbol" />
+                            <img src="images/footer-aoc-icon.svg" alt="symbol" />
                           </div>
                           <h4 class="act-h4-white">Acknowledgement of Country</h4>
                         </div>
