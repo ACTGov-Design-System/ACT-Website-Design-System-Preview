@@ -3676,7 +3676,16 @@ table tbody tr:nth-child(odd) td,
   padding: 16px;
   width: 100%;
 }
-.act-sidebar__link {
+.act-sidebar__item {
+  color: #111111;
+  font-size: 20px;
+  width: 100%;
+}
+.act-sidebar__item:active {
+  background-color: #472d8c;
+  color: #ffffff;
+}
+.act-sidebar__item__summary {
   border-top: 1px solid #ffffff;
   color: #111111;
   cursor: pointer;
@@ -3684,19 +3693,73 @@ table tbody tr:nth-child(odd) td,
   font-weight: 600;
   padding: 16px;
   width: 100%;
+  list-style: none;
 }
-.act-sidebar__link:hover {
+.act-sidebar__item__summary:hover {
   background-color: #9a78f2;
   color: #ffffff;
-  text-decoration: underline;
 }
-.act-sidebar__link__selected {
+.act-sidebar__item__summary__selected {
   background-color: #472d8c;
   color: #ffffff;
 }
-.act-sidebar__link__selected:hover {
+.act-sidebar__item__summary__selected:hover {
   background-color: #472d8c;
   color: #ffffff;
+}
+.act-sidebar__item__summary::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #111111;
+  margin-left: 5px;
+}
+.act-sidebar__item__dropdown {
+  list-style: none;
+  border-top: 1px solid #ffffff;
+  color: #111111;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  margin: 0;
+}
+.act-sidebar__item__dropdown__item {
+  padding: 16px;
+  border-bottom: 1px solid #ffffff;
+}
+.act-sidebar__item__dropdown__item:hover {
+  background-color: #9a78f2;
+  color: #ffffff;
+}
+.act-sidebar__item__dropdown__item:last-of-type {
+  border: none;
+}
+.act-sidebar__item__dropdown__closed {
+  display: none;
+}
+.act-sidebar__item__dropdown__open {
+  display: block;
+}
+.act-sidebar details summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  user-select: none;
+}
+.act-sidebar details summary::-webkit-details-marker {
+  display: none;
+}
+.act-sidebar details[open] > summary {
+  background-color: #472d8c;
+  color: #ffffff;
+}
+.act-sidebar details[open] > summary > .summary-chevron > svg {
+  transform: rotate(180deg);
 }
 
 .act-pagination {
