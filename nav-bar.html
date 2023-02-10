@@ -3,6 +3,7 @@
     <title>ACT Government | Website Design System | PREVIEW</title>
     <link rel="shortcut icon" href="favicons/act-favicon.png" />
     <link rel="icon" type="image/png" href="favicons/act-favicon.png" sizes="192x192" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.compiled.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/01a48c4df0.js" crossorigin="anonymous"></script>
     <script src="js/functions.js"></script>
@@ -89,7 +90,7 @@
                 <div class="act-flex__row">
                   <div class="act-col__cw-12">
                     <div class="act-box">
-                      <p>Click Search to activate</p>
+                      <!-- <p>Click Search to activate</p> -->
                       <br />
                       <div class="act-navbar">
                         <div class="act-navbar__container">
@@ -105,21 +106,24 @@
                               </div>
                             </div>
                           </div>
-                          <div class="act-navbar__content">
-                            <div class="act-navbar__search">
+                          <div class="act-navbar__content" style="display: flex; flex-grow: 1">
+                            <div
+                              class="act-navbar__search"
+                              onclick="showSearchField()"
+                              style="width: 100%; display: flex; justify-content: end"
+                            >
                               <div class="act-navbar__search__container act-h5">
-                                <span onclick="showSearchField()" class="act-navbar__search__text">Search</span>
-                                <form class="act-form">
-                                  <input
-                                    class="act-form__field__text default"
-                                    id="nav-search"
-                                    type="text"
-                                    value=""
-                                    placeholder="Start typing..."
-                                    style="display: none"
-                                  />
-                                </form>
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <span class="act-navbar__search__icon">
+                                  <i class="fa-solid fa-magnifying-glass" id="open-search-icon"></i>
+                                </span>
+                                <div class="act-search-results-container" style="display: none">
+                                  <div class="act-search-bar">
+                                    <input class="act-search-bar__input" placeholder="Search..." type="text" />
+                                    <button class="act-search-bar__button">
+                                      <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             <div class="act-navbar__menu">

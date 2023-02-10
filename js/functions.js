@@ -38,29 +38,39 @@ function setActiveTab(e) {
 
 //W=12 Nav Bar
 function showSearchField() {
-  //hide placeholder text
-  const search = document.querySelector(".act-navbar__search__container");
-
-  if (search) {
-    for (item of search.children) {
-      if (item.tagName == "SPAN" || item.tagName == "I") item.style.display = "none";
-    }
-  }
-
-  const searchInputField = document.querySelector("#nav-search");
+  const searchContainer = document.querySelector(".act-navbar__search__container");
+  const searchForm = document.querySelector(".act-search-results-container");
+  const searchInputField = document.querySelector(".act-search-bar__input");
   //the search input doesnt exist
-  if (!searchInputField) {
-    return;
-  }
-  searchInputField.style.display = "block";
-  const searchContainer = document.querySelector(".act-navbar__content");
-  if (!searchContainer) {
-    //couldnt find container to set the width to 100%
+  if (!searchInputField || !searchForm || !searchInputField) {
+    console.log("no search input");
+    console.log(searchContainer, searchForm, searchInputField);
     return;
   }
 
-  //set the input field wider
-  searchInputField.style.width = "100%";
+  //hide search icon
+  const searchText = document.querySelector(".act-navbar__search__icon");
+  searchText.remove();
+
+  searchContainer.style.width = "100%";
+  searchContainer.style.display = "flex";
+  searchContainer.style.flexGrow = "1";
+  // searchContainer.style.backgroundColor = "#f4f2fa";
+
+  //migrate these to a Class that only does on mobile
+  searchForm.style.display = "flex";
+  searchForm.style.flexDirection = "row";
+  searchForm.style.width = "100%";
+
+  //TODO: only on mobile - turn this into a class?
+  searchForm.style.position = "absolute";
+  searchForm.style.left = "0px";
+  searchForm.style.alignItems = "center";
+
+  //TODO: get the X sitting on same row as input field
+  // searchInputField.style.border = "none";
+  // searchInputField.style.backgroundColor = "#f4f2fa";
+  // searchInputField.style.minWidth = "auto";
 
   //focus in search field
   searchInputField.focus();
