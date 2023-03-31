@@ -1,12 +1,15 @@
 //A11 - Accordion
 function toggleAccordion() {
-  const e = document.querySelector(".act-accordion__section");
-  if (e.classList.contains("act-accordion__section__open")) {
-    e.classList.remove("act-accordion__section__open");
-    e.classList.add("act-accordion__section__closed");
-  } else {
-    e.classList.remove("act-accordion__section__closed");
-    e.classList.add("act-accordion__section__open");
+  const elements = document.getElementsByClassName("act-accordion__section");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", function() {
+      for (let j = 0; j < elements.length; j++) {
+        if (j !== i) {
+          elements[j].classList.remove("act-accordion__section__open");
+        }
+      }
+      this.classList.add("act-accordion__section__open");
+    });
   }
 }
 
@@ -28,43 +31,47 @@ function togglePopover() {
 }
 
 //T21 - Tabs
-function setActiveTab(e) {
-  const currentActiveTab = document.querySelector(".act-tabs__tab__active");
-  if (currentActiveTab) {
-    currentActiveTab.classList.remove("act-tabs__tab__active");
-  }
-  e.target.classList.add("act-tabs__tab__active");
-}
+document.addEventListener("DOMContentLoaded", function() {
+  var tabs = document.querySelectorAll(".act-tabs__tab");
+  var tabContents = document.querySelectorAll(".act-tabs__content");
+  tabs.forEach(function(tab, index) {
+    tab.addEventListener("click", function() {
+      tabs.forEach(function(tab) {
+        tab.classList.remove("act-tabs__tab__active");
+        tab.setAttribute("aria-selected", "false");
+      });
+      this.classList.add("act-tabs__tab__active");
+      this.setAttribute("aria-selected", "true");
+      tabContents.forEach(function(tabContent) {
+        tabContent.classList.remove("act-tabs__content__open");
+        tabContent.classList.add("act-tabs__content__closed");
+      });
+      tabContents[index].classList.remove("act-tabs__content__closed");
+      tabContents[index].classList.add("act-tabs__content__open");
+    });
+  });
+});
 
 //W=12 Nav Bar
-function showSearchField() {
-  //hide placeholder text
-  const search = document.querySelector(".act-navbar__search__container");
+document.addEventListener("DOMContentLoaded", function() {
+  const searchContainer = document.querySelector(".act-navbar__search__container");
+  const searchInput = searchContainer.querySelector(".act-navbar__search__text");
+  const searchIcon = searchContainer.querySelector(".act-navbar__search__icon");
+  searchInput.addEventListener("click", () => {
+    searchContainer.classList.add("active");
+    searchInput.classList.add("active");
+    searchIcon.classList.replace("fa-magnifying-glass", "fa-times");
+  });
+  searchIcon.addEventListener("click", () => {
+    searchIcon.classList.replace("fa-times", "fa-magnifying-glass");
+    searchContainer.classList.remove("active");
+    searchContainer.blur();
+    searchInput.value = "";
+    searchInput.classList.remove("active");
+    searchInput.blur();
+  });
 
-  if (search) {
-    for (item of search.children) {
-      if (item.tagName == "SPAN" || item.tagName == "I") item.style.display = "none";
-    }
-  }
-
-  const searchInputField = document.querySelector("#nav-search");
-  //the search input doesnt exist
-  if (!searchInputField) {
-    return;
-  }
-  searchInputField.style.display = "block";
-  const searchContainer = document.querySelector(".act-navbar__content");
-  if (!searchContainer) {
-    //couldnt find container to set the width to 100%
-    return;
-  }
-
-  //set the input field wider
-  searchInputField.style.width = "100%";
-
-  //focus in search field
-  searchInputField.focus();
-}
+});
 
 //W-15 Mega Menu - toggle visibility
 function toggleMegaMenu() {
