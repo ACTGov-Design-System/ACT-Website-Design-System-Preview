@@ -1,17 +1,21 @@
 //A11 - Accordion
-function toggleAccordion() {
-  const elements = document.getElementsByClassName("act-accordion__section");
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", function() {
-      for (let j = 0; j < elements.length; j++) {
-        if (j !== i) {
-          elements[j].classList.remove("act-accordion__section__open");
-        }
+document.addEventListener("DOMContentLoaded", function() {
+  const sectionHeadings = document.querySelectorAll(".act-accordion__section__heading");
+  sectionHeadings.forEach(function(heading) {
+    heading.addEventListener("click", function() {
+      const section = heading.parentElement;
+      section.classList.toggle("act-accordion__section__open");
+      const icon = heading.querySelector(".fa-solid");
+      if (section.classList.contains("act-accordion__section__open")) {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-minus");
+      } else {
+        icon.classList.remove("fa-minus");
+        icon.classList.add("fa-xmark");
       }
-      this.classList.add("act-accordion__section__open");
     });
-  }
-}
+  });
+});
 
 //A21 - Global Alerts
 function dismissGlobalAlbert() {
