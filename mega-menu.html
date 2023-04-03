@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="favicons/act-favicon.png" sizes="192x192" />
     <link href="css/style.compiled.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/01a48c4df0.js" crossorigin="anonymous"></script>
-    <script src="js/functions.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -98,189 +98,238 @@
                       >
                         Open Mega Menu
                       </button>
-                      <div class="act-megamenu" style="visibility: hidden">
-                        <div class="act-megamenu__container">
-                          <div class="act-megamenu__content act-megamenu__content__header">
-                            <div class="act-megamenu__block">
-                              <div class="act-logos">
-                                <div class="act-logos__container">
-                                  <a class="act-logo-horizontal" href="#" target="_blank" title="ACT Government">
-                                    <img src="/logos/act-govt-white-horizontal.svg" alt="ACT Government" />
+                      <div class="act-megamenu">
+                          <div class="act-megamenu__container">
+                            <div class="act-megamenu__content__block-main-menu">
+                              <div class="act-megamenu__section-heading">
+                                Home
+                              </div>
+                              <div class="act-megamenu__link-container">
+                                <div class="act-megamenu__link" id="main-menu-link-1" onclick="openChildLinks(event)">
+                                  <div class="act-megamenu__link__text">
+                                    Link 1
+                                  </div>
+                                  <div class="act-megamenu__link__icon">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                  </div>
+                                </div>
+                                <div class="act-megamenu__link" id="main-menu-link-2" onclick="openChildLinks(event)">
+                                  <div class="act-megamenu__link__text">
+                                  Information and support
+                                  </div>
+                                  <div class="act-megamenu__link__icon">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                  </div>
+                                </div>
+                                <div class="act-megamenu__link" id="main-menu-link-3" onclick="openChildLinks(event)">
+                                  <div class="act-megamenu__link__text">
+                                    Link 3
+                                  </div>
+                                  <div class="act-megamenu__link__icon">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="act-megamenu__content__block-main-menu__additional-links">
+                                <div class="act-megamenu__link">
+                                  <a class="act-megamenu__link__text">
+                                    Additional Link 1
                                   </a>
-                                  <a class="act-logo-cobrand-logo" href="#" target="_self" title="Access Canberra">
-                                    <img src="/logos/access-canberra-white-horizontal.svg" alt="Access Canberra" />
+                                </div>
+                                <div class="act-megamenu__link">
+                                  <a class="act-megamenu__link__text">
+                                  Additional Link 2
+                                  </a>
+                                </div>
+                                <div class="act-megamenu__link">
+                                  <a class="act-megamenu__link__text">
+                                  Additional Link 3
+                                  </a>
+                                </div>
+                                <button class="button">
+                                  <span class="button__text">
+                                    Login
+                                  </span>
+                                  <span class="button__icon">
+                                    <i class="fa-solid fa-user"></i>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div class="act-megamenu__content__block-sub-menu hidden-mobile" id="sub-menu">
+                              <button class="back-button" onclick="toggleSubMenu(false)">
+                                  <span class="back-button__icon">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                  </span>
+                                  <span class="back-button__text">
+                                    Back
+                                  </span>
+                              </button>
+                              <div class="act-megamenu__sub-menu-link-container hidden" id="sub-menu-1">
+                                <div class="section-heading">
+                                  Child Links 1
+                                </div>
+                                <div class="sub-menu-links-list">
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 11
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 12
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 13
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      External Link
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-external-link"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 15
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 16
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
                                   </a>
                                 </div>
                               </div>
-                            </div>
-                            <div class="act-megamenu__block">
-                              <div class="act-megamenu__close" title="Close Menu" onclick="toggleMegaMenu()">
-                                Close
-                                <i class="fa-solid fa-xmark"></i>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="act-megamenu__content act-megamenu__content__main">
-                            <div class="act-megamenu__content__block">
-                              <div class="act-megamenu__link">
-                                <div class="act-megamenu__link__text">Home</div>
-                              </div>
-                              <div class="act-megamenu__link" id="parent-1" onclick="openChildLinks(event)">
-                                <div class="act-megamenu__link__text">Link 1</div>
-                                <div class="act-megamenu__link__icon">
-                                  <i class="fa-solid fa-angle-right"></i>
+                              <div class="act-megamenu__sub-menu-link-container hidden" id="sub-menu-2">
+                                <div class="section-heading">
+                                  Information and support
+                                </div>
+                                <div class="sub-menu-links-list">
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      External Link
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-external-link"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 22
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 23
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 24
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 25
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 26
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
                                 </div>
                               </div>
-                              <div class="act-megamenu__link" id="parent-2" onclick="openChildLinks(event)">
-                                <div class="act-megamenu__link__text">Link 2</div>
-                                <div class="act-megamenu__link__icon">
-                                  <i class="fa-solid fa-angle-right"></i>
+                              <div class="act-megamenu__sub-menu-link-container hidden" id="sub-menu-3">
+                                <div class="section-heading">
+                                  Child Links 3
                                 </div>
-                              </div>
-                              <div class="act-megamenu__link" id="parent-3" onclick="openChildLinks(event)">
-                                <div class="act-megamenu__link__text">Link 3</div>
-                                <div class="act-megamenu__link__icon">
-                                  <i class="fa-solid fa-angle-right"></i>
+                                <div class="sub-menu-links-list">
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 31
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 32
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 33
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 34
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 35
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
+                                  <a class="act-megamenu__link">
+                                    <div class="act-megamenu__link__text">
+                                      Sub Link 36
+                                    </div>
+                                    <div class="act-megamenu___link__icon">
+                                      <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                  </a>
                                 </div>
-                              </div>
-                              <div class="act-megamenu__link" id="parent-4" onclick="openChildLinks(event)">
-                                <div class="act-megamenu__link__text">Link 4</div>
-                                <div class="act-megamenu__link__icon">
-                                  <i class="fa-solid fa-angle-right"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- This needs to hidden until the user clicks on a parent link -->
-                            <div class="act-megamenu__content__block" id="child-links-1" style="display: none">
-                              <div class="act-megamenu__link">
-                                <div class="act-megamenu__link__text">
-                                  Parent Link 1
-                                  <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 1</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 2</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 3</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 4</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 5</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 6</div>
-                              </div>
-                            </div>
-                            <div class="act-megamenu__content__block" id="child-links-2" style="display: none">
-                              <div class="act-megamenu__link">
-                                <div class="act-megamenu__link__text">
-                                  Parent Link 2
-                                  <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 1</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 2</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 3</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 4</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 5</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 6</div>
-                              </div>
-                            </div>
-                            <div class="act-megamenu__content__block" id="child-links-3" style="display: none">
-                              <div class="act-megamenu__link">
-                                <div class="act-megamenu__link__text">
-                                  Parent Link 3
-                                  <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 1</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 2</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 3</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 4</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 5</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 6</div>
-                              </div>
-                            </div>
-                            <div class="act-megamenu__content__block" id="child-links-4" style="display: none">
-                              <div class="act-megamenu__link">
-                                <div class="act-megamenu__link__text">
-                                  Parent Link 4
-                                  <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 1</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 2</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 3</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 4</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 5</div>
-                              </div>
-                              <div class="act-megamenu__sublink">
-                                <div class="act-megamenu__sublink__text">Sub Link 6</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="act-megamenu__content act-megamenu__content__footer">
-                            <div class="act-megamenu__block">
-                              <p>
-                                <a class="" href="#" target="_blank" title="Accessibility">Accessibility</a>
-                                <a class="" href="#" target="_blank" title="Privacy">Privacy</a>
-                                <a class="" href="#" target="_blank" title="Disclaimer">Disclaimer</a>
-                                <a class="" href="#" target="_blank" title="Copyright">Copyright</a>
-                                <a class="" href="#" target="_blank" title="Sitemap">Sitemap</a>
-                              </p>
-                            </div>
-                            <div class="act-megamenu__block">
-                              <div class="act-megamenu__socials">
-                                <h5>Follow us</h5>
-                                <a class="act-megamenu__socials__icon" href="#" target="_blank" title="Facebook">
-                                  <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a class="act-megamenu__socials__icon" href="#" target="_blank" title="Twitter">
-                                  <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a class="act-megamenu__socials__icon" href="#" target="_blank" title="Linkedin">
-                                  <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
-                                <a class="act-megamenu__socials__icon" href="#" target="_blank" title="YouTube">
-                                  <i class="fa-brands fa-youtube"></i>
-                                </a>
                               </div>
                             </div>
                           </div>
@@ -294,7 +343,7 @@
           </section>
         </main>
         <footer class="act-footer">
-          <div class="act-flex act-flex-purple">
+          <div class="act-flex act-flex-middle-dark-grey">
             <div class="act-flex__container">
               <div class="act-flex__grid">
                 <div class="act-flex__row">
@@ -321,7 +370,7 @@
               </div>
             </div>
           </div>
-          <div class="act-flex act-flex-violet">
+          <div class="act-flex act-flex-middle-dark-grey">
             <div class="act-flex__container">
               <div class="act-flex__grid">
                 <div class="act-flex__row">
@@ -408,5 +457,40 @@
         </footer>
       </div>
     </div>
+  <script>
+      //For demo purposes only
+      function toggleSubMenu(open) {
+        const mainMenu = document.querySelector(".act-megamenu__content__block-main-menu");
+        const subMenu = document.querySelector(".act-megamenu__content__block-sub-menu");
+        if(open) {
+          subMenu.classList.remove("hidden-mobile")
+          mainMenu.classList.add("hidden-mobile")
+        } else {
+          subMenu.classList.add("hidden-mobile")
+          mainMenu.classList.remove("hidden-mobile")
+        }
+      }
+
+      function openChildLinks(e) {
+
+        const element = e.currentTarget;
+        const num = element.id.split("-")[3];
+
+        //make sub-menu visible
+        toggleSubMenu(true)
+
+        const visibleChildElements = document.querySelectorAll("[id^=sub-menu-]");
+        for (const childElement of visibleChildElements) {
+          childElement.style.display = "none";
+        }
+        const childElement = document.querySelector("#sub-menu-" + num);
+        if (!childElement) {
+          return;
+        }
+        childElement.style.display = "grid";
+      }
+      // End demo code
+    </script>
+    <script src="js/functions.js"></script>
   </body>
 </html>

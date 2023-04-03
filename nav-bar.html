@@ -128,7 +128,7 @@
           </section>
         </main>
         <footer class="act-footer">
-          <div class="act-flex act-flex-purple">
+          <div class="act-flex act-flex-middle-dark-grey">
             <div class="act-flex__container">
               <div class="act-flex__grid">
                 <div class="act-flex__row">
@@ -155,7 +155,7 @@
               </div>
             </div>
           </div>
-          <div class="act-flex act-flex-violet">
+          <div class="act-flex act-flex-middle-dark-grey">
             <div class="act-flex__container">
               <div class="act-flex__grid">
                 <div class="act-flex__row">
@@ -242,5 +242,28 @@
         </footer>
       </div>
     </div>
+    <script>
+      var navbar =  document.querySelector(".act-navbar__search__container");
+      if (typeof(navbar) != 'undefined' && navbar != null) {
+       document.addEventListener("DOMContentLoaded", function() {
+         const searchContainer = document.querySelector(".act-navbar__search__container");
+         const searchInput = searchContainer.querySelector(".act-navbar__search__text");
+         const searchIcon = searchContainer.querySelector(".act-navbar__search__icon");
+         searchInput.addEventListener("click", () => {
+           searchContainer.classList.add("active");
+           searchInput.classList.add("active");
+           searchIcon.classList.replace("fa-magnifying-glass", "fa-times");
+         });
+         searchIcon.addEventListener("click", () => {
+           searchIcon.classList.replace("fa-times", "fa-magnifying-glass");
+           searchContainer.classList.remove("active");
+           searchContainer.blur();
+           searchInput.value = "";
+           searchInput.classList.remove("active");
+           searchInput.blur();
+         });
+       });
+      }
+    </script>
   </body>
 </html>

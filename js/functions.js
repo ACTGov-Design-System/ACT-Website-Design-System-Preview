@@ -56,61 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-//W=12 Nav Bar
-document.addEventListener("DOMContentLoaded", function() {
-  const searchContainer = document.querySelector(".act-navbar__search__container");
-  const searchInput = searchContainer.querySelector(".act-navbar__search__text");
-  const searchIcon = searchContainer.querySelector(".act-navbar__search__icon");
-  searchInput.addEventListener("click", () => {
-    searchContainer.classList.add("active");
-    searchInput.classList.add("active");
-    searchIcon.classList.replace("fa-magnifying-glass", "fa-times");
-  });
-  searchIcon.addEventListener("click", () => {
-    searchIcon.classList.replace("fa-times", "fa-magnifying-glass");
-    searchContainer.classList.remove("active");
-    searchContainer.blur();
-    searchInput.value = "";
-    searchInput.classList.remove("active");
-    searchInput.blur();
-  });
 
-});
-
-//W-15 Mega Menu - toggle visibility
-function toggleMegaMenu() {
-  const e = document.querySelector(".act-megamenu");
-  if (e) {
-    if (e.style.visibility === "hidden") {
-      e.style.visibility = "visible";
-    } else {
-      //find all the visible child links and hide them before closing the menu
-      const visibleChildElements = document.querySelectorAll("[id^=child-links-]");
-      for (const childElement of visibleChildElements) {
-        childElement.style.display = "none";
-      }
-
-      //now close the menu
-      e.style.visibility = "hidden";
-    }
-  }
-}
-
-//W-15 Mega Menu - reveal child links
-function openChildLinks(e) {
-  const element = e.currentTarget;
-  const num = element.id.split("-")[1];
-
-  const visibleChildElements = document.querySelectorAll("[id^=child-links-]");
-  for (const childElement of visibleChildElements) {
-    childElement.style.display = "none";
-  }
-  const childElement = document.querySelector(`#child-links-${num}`);
-  if (!childElement) {
-    return;
-  }
-  childElement.style.display = "block";
-}
 
 //P-12 Cookie Consent
 function toggleCookieConsent() {
