@@ -1,10 +1,12 @@
 <html lang="en">
   <head>
     <title>ACT Government | Website Design System | PREVIEW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="favicons/act-favicon.png" />
     <link rel="icon" type="image/png" href="favicons/act-favicon.png" sizes="192x192" />
     <link href="css/style.compiled.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/01a48c4df0.js" crossorigin="anonymous"></script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -89,7 +91,7 @@
                 <div class="act-flex__row">
                   <div class="act-col__cw-12">
                     <div class="act-box">
-                      <p>Toggle mega menu navigation</p>
+                      <!-- <p>Toggle mega menu navigation</p>
                       <br />
                       <button
                         class="act-button act-button__primary act-button__default act-button__icon-left act-button__primary-undefined"
@@ -97,11 +99,49 @@
                         onclick="toggleMegaMenu()"
                       >
                         Open Mega Menu
-                      </button>
-                      <div class="act-megamenu">
+                      </button> -->
+                      <div class="storybook-container">
+                        <script>
+                          //For demo purposes only
+                          function toggleSubMenu(open) {
+                            const mainMenu = document.querySelector(".act-megamenu__content__block-main-menu");
+                            const subMenu = document.querySelector(".act-megamenu__content__block-sub-menu");
+                            if(open) {
+                              subMenu.classList.remove("hidden-mobile")
+                              mainMenu.classList.add("hidden-mobile")
+                            } else {
+                              subMenu.classList.add("hidden-mobile")
+                              mainMenu.classList.remove("hidden-mobile")
+                            }
+                          }
+                      
+                          function openChildLinks(e) {
+                            
+                            const element = e.currentTarget;
+                            const num = element.id.split("-")[3];
+                      
+                            //make sub-menu visible
+                            toggleSubMenu(true)
+                            
+                            const visibleChildElements = document.querySelectorAll("[id^=sub-menu-]");
+                            for (const childElement of visibleChildElements) {
+                              childElement.style.display = "none";
+                            }
+                            const childElement = document.querySelector("#sub-menu-" + num);
+                            if (!childElement) {
+                              return;
+                            }
+                            childElement.style.display = "grid";
+                          }
+                          // End demo code
+                        </script>
+                        
+                        
+                        <!-- Mega Menu -->     
+                        <div class="act-megamenu">
                           <div class="act-megamenu__container">
                             <div class="act-megamenu__content__block-main-menu">
-                              <div class="act-megamenu__section-heading">
+                              <div class="act-megamenu__section-heading" tabindex="0">
                                 Home
                               </div>
                               <div class="act-megamenu__link-container">
@@ -156,7 +196,7 @@
                                 </button>
                               </div>
                             </div>
-
+                            
                             <div class="act-megamenu__content__block-sub-menu hidden-mobile" id="sub-menu">
                               <button class="back-button" onclick="toggleSubMenu(false)">
                                   <span class="back-button__icon">
@@ -335,6 +375,7 @@
                           </div>
                         </div>
                       </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -457,40 +498,6 @@
         </footer>
       </div>
     </div>
-  <script>
-      //For demo purposes only
-      function toggleSubMenu(open) {
-        const mainMenu = document.querySelector(".act-megamenu__content__block-main-menu");
-        const subMenu = document.querySelector(".act-megamenu__content__block-sub-menu");
-        if(open) {
-          subMenu.classList.remove("hidden-mobile")
-          mainMenu.classList.add("hidden-mobile")
-        } else {
-          subMenu.classList.add("hidden-mobile")
-          mainMenu.classList.remove("hidden-mobile")
-        }
-      }
-
-      function openChildLinks(e) {
-
-        const element = e.currentTarget;
-        const num = element.id.split("-")[3];
-
-        //make sub-menu visible
-        toggleSubMenu(true)
-
-        const visibleChildElements = document.querySelectorAll("[id^=sub-menu-]");
-        for (const childElement of visibleChildElements) {
-          childElement.style.display = "none";
-        }
-        const childElement = document.querySelector("#sub-menu-" + num);
-        if (!childElement) {
-          return;
-        }
-        childElement.style.display = "grid";
-      }
-      // End demo code
-    </script>
-    <script src="js/functions.js"></script>
+  
   </body>
 </html>
